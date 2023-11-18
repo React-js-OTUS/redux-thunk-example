@@ -3,7 +3,6 @@ import cn from 'clsx';
 import { useDispatch } from 'react-redux';
 import { countActions } from 'src/store/count';
 import { AppDispatch } from 'src/store';
-import { ThunkDispatch } from 'redux-thunk';
 import s from './CountEditorUseDispatch.sass';
 
 export type CountEditorUseDispatchProps = {

@@ -12,7 +12,7 @@ export type TokenGeneratorProps = {
   same: () => void;
 };
 
-export const TokenGeneratorOrigin = ({ className, gen, genWithSaving, same }: TokenGeneratorProps) => {
+export const TokenGeneratorOrigin = ({ className, gen, genWithSaving }: TokenGeneratorProps) => {
   console.log('render: TokenGeneratorOrigin');
 
   return (
@@ -23,9 +23,6 @@ export const TokenGeneratorOrigin = ({ className, gen, genWithSaving, same }: To
       </button>
       <button type="button" onClick={genWithSaving}>
         Генерировать и сохранить фэйковый токен
-      </button>
-      <button type="button" onClick={same}>
-        Установить тот же токен
       </button>
     </div>
   );

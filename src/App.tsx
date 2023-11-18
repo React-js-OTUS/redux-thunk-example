@@ -1,8 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from 'src/store';
-import { CountListenerUseSelector } from 'src/components/CountListenerUseSelector';
-import { CountEditorUseDispatch } from 'src/components/CountEditorUseDispatch';
 import { TokenGenerator } from 'src/components/TokenGenerator';
 import { TokenView } from 'src/components/TokenView';
 import { TokenGeneratorWithSaving } from 'src/components/TokenGeneratorWithSaving';
@@ -15,13 +13,11 @@ function App() {
     <div className={s.root}>
       <h1>Пример redux приложения</h1>
       <Provider store={store}>
-        <h3>items</h3>
-        <h3>count</h3>
-        <CountListenerUseSelector />
-        <CountEditorUseDispatch />
+        <h3>token</h3>
         <TokenGenerator />
         <TokenGeneratorWithSaving />
         <TokenView />
+        <h3>todos</h3>
         <TodosFetch />
         <TodosView />
       </Provider>
