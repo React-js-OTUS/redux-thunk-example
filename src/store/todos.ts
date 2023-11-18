@@ -3,7 +3,7 @@ import { AppState, ExtraParams } from 'src/store/index';
 
 export const fetchTodos = createAsyncThunk('todos/fetchTodos', async (arg: string, thunkAPI) => {
   console.log({ arg, thunkAPI });
-  const response = await fetch((thunkAPI.extra as ExtraParams).url).then((res) => res.json());
+  const response = await fetch(`${(thunkAPI.extra as ExtraParams).url}todos`).then((res) => res.json());
   return response;
 });
 
