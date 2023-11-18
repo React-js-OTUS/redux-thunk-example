@@ -11,13 +11,11 @@ const tokenSlice = createSlice({
 });
 export const tokenActions = tokenSlice.actions;
 
-const genWithSavingThunk =
-  (): AppThunk =>
-  (dispatch, getState, { version }) => {
-    dispatch(tokenActions.gen());
-    const state = getState();
-    localStorage.setItem(`token-v: ${version}`, state.token);
-  };
+const genWithSavingThunk = (): AppThunk => (dispatch, getState) => {
+  dispatch(tokenActions.gen());
+  const state = getState();
+  localStorage.setItem('token', state.token);
+};
 
 export const tokenThunks = {
   genWithSaving: genWithSavingThunk,
