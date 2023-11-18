@@ -17,6 +17,7 @@ import {
   CombineViewUseSelector2,
   CombineViewUseSelector3,
 } from 'src/components/CombineViewUseSelector';
+import { TokenGeneratorWithSaving } from 'src/components/TokenGeneratorWithSaving';
 import s from './App.sass';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <CountEditorUseDispatch />
         {/* <h3>token</h3> */}
         <TokenGenerator />
+        <TokenGeneratorWithSaving />
         <TokenView />
         {/* <h3>combine</h3> */}
         {/* <h4>compose</h4> */}

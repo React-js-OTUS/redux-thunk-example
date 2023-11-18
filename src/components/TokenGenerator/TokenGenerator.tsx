@@ -1,16 +1,18 @@
 import React from 'react';
 import cn from 'clsx';
 import { connect } from 'react-redux';
-import { tokenActions } from 'src/store/token';
+import { tokenThunks, tokenActions } from 'src/store/token';
+import { AppDispatch } from 'src/store';
 import s from './TokenGenerator.sass';
 
 export type TokenGeneratorProps = {
   className?: string;
   gen: () => void;
+  genWithSaving: () => void;
   same: () => void;
 };
 
-export const TokenGeneratorOrigin = ({ className, gen, same }: TokenGeneratorProps) => {
+export const TokenGeneratorOrigin = ({ className, gen, genWithSaving, same }: TokenGeneratorProps) => {
   console.log('render: TokenGeneratorOrigin');
 
   return (
@@ -19,6 +21,9 @@ export const TokenGeneratorOrigin = ({ className, gen, same }: TokenGeneratorPro
       <button type="button" onClick={gen}>
         Генерировать фэйковый токен
       </button>
+      <button type="button" onClick={genWithSaving}>
+        Генерировать и сохранить фэйковый токен
+      </button>
       <button type="button" onClick={same}>
         Установить тот же токен
       </button>
@@ -26,10 +31,8 @@ export const TokenGeneratorOrigin = ({ className, gen, same }: TokenGeneratorPro
   );
 };
 
-export const TokenGenerator = connect(null, (dispatch) => ({
-  gen: () => {
-    console.log(tokenActions.gen());
-    dispatch(tokenActions.gen());
-  },
+export const TokenGenerator = connect(null, (dispatch: AppDispatch) => ({
+  gen: () => dispatch(tokenActions.gen()),
+  genWithSaving: () => dispatch(tokenThunks.genWithSaving()),
   same: () => dispatch(tokenActions.same()),
 }))(TokenGeneratorOrigin);
