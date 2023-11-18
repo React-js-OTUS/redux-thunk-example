@@ -1,6 +1,7 @@
 import { AnyAction, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { count } from 'src/store/count';
 import { token } from 'src/store/token';
+import { todos } from 'src/store/todos';
 import { items } from './items';
 
 export const store = configureStore({
@@ -8,6 +9,7 @@ export const store = configureStore({
     items,
     count,
     token,
+    todos,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -22,9 +24,5 @@ export const store = configureStore({
 
 export type AppState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  AppState,
-  { url: string; version: string },
-  AnyAction
->;
+export type ExtraParams = { url: string; version: string };
+export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, AppState, ExtraParams, AnyAction>;

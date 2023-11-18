@@ -1,15 +1,15 @@
 import React from 'react';
 import cn from 'clsx';
 import { useDispatch } from 'react-redux';
-import { tokenThunks, tokenActions } from 'src/store/token';
+import { tokenThunks } from 'src/store/token';
 import { AppDispatch } from 'src/store';
 import s from './TokenGeneratorWithSaving.sass';
 
-export type TokenGeneratorProps = {
+export type TokenGeneratorWithSavingProps = {
   className?: string;
 };
 
-export const TokenGeneratorWithSaving = ({ className }: TokenGeneratorProps) => {
+export const TokenGeneratorWithSaving = ({ className }: TokenGeneratorWithSavingProps) => {
   const dispatch: AppDispatch = useDispatch();
 
   console.log('render: TokenGeneratorWithSaving');

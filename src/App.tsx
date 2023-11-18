@@ -18,6 +18,8 @@ import {
   CombineViewUseSelector3,
 } from 'src/components/CombineViewUseSelector';
 import { TokenGeneratorWithSaving } from 'src/components/TokenGeneratorWithSaving';
+import { TodosFetch } from 'src/components/TodosFetch';
+import { TodosView } from 'src/components/TodosView';
 import s from './App.sass';
 
 function App() {
@@ -36,6 +38,8 @@ function App() {
         <TokenGenerator />
         <TokenGeneratorWithSaving />
         <TokenView />
+        <TodosFetch />
+        <TodosView />
         {/* <h3>combine</h3> */}
         {/* <h4>compose</h4> */}
         {/* <CombineViewConnectVariant1 /> */}
