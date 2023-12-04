@@ -12,7 +12,7 @@ const userSlice = createSlice({
 });
 export const userActions = userSlice.actions;
 
-const getByCountThunk =
+export const getByCountThunk =
   (): AppThunk =>
   async (dispatch, getState, { url }) => {
     const { count } = getState();

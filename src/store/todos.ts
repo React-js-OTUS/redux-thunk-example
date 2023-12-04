@@ -7,7 +7,7 @@ export const fetchTodos = createAsyncThunk('todos/fetchTodos', async (arg: strin
   return response;
 });
 
-const initialState: {
+export const initialState: {
   todos: unknown[];
   error: Error;
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
