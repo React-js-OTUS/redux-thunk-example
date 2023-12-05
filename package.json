@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,7 @@
     "@babel/preset-env": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
+    "@types/jest": "^29.5.10",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
@@ -38,6 +40,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "html-webpack-plugin": "^5.5.3",
+    "jest": "^29.7.0",
     "prettier": "^3.0.3",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
