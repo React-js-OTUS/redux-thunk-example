@@ -1,7 +1,7 @@
 {
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint", "prettier", "react-hooks"],
-    "extends": ["airbnb", "prettier", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended"],
+    "extends": ["prettier", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended"],
     "parserOptions": {
         "sourceType": "module"
     },
@@ -21,7 +21,11 @@
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "@typescript-eslint/no-empty-function": "off",
-        "prettier/prettier": ["error"],
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }],
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
         "no-plusplus": 0,
@@ -47,7 +51,6 @@
         "default-param-last": 0,
         "no-param-reassign": 0,
         "import/no-unresolved": 0,
-        "jsx-a11y/control-has-associated-label": 0,
         "react/jsx-filename-extension": [2, { "extensions": [".ts", ".tsx", ".js", ".jsx"] }]
     }
 }
